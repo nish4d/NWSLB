@@ -10,7 +10,7 @@ app.use(express.json());
 
 // MongoDB Connection URI
 const uri =
-  "mongodb+srv://nishadisl4m017:VOmZjTSaN9gXSXVG@cluster0.2bnixnr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+  "mongodb+srv://name:pass@cluster0.2bnixnr.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 
 // Create a MongoClient with a MongoClientOptions object
 const client = new MongoClient(uri, {
@@ -77,7 +77,7 @@ app.get("/api/users", async (req, res) => {
     // Ensure database connection
     await connectToDatabase();
 
-    const collection = client.db("nishad").collection("nishad1");
+    const collection = client.db("name").collection("name");
     const users = await collection.find({}).toArray();
     res.json(users);
   } catch (error) {
